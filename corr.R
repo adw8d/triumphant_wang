@@ -9,24 +9,19 @@ corr <- function(directory, threshold = 0) {
         
         ## Return a numeric vector of correlations
         
-        dataframe <- complete("specdata", 1:332)
+        filelist <- list.files(directory, full.names = TRUE)
         
-        comps_threshold <- dataframe$nobs>threshold
+        for (i in 1:332) {
+                dat <<- rbind(dat,read.csv(filelist[i]))
+        }
+        ds <- dat[!is.na(dat$sulfate & dat$nitrate),]
         
+        ## I want a vector of the ID numbers that fit the threshold
+        v <- NULL
         
+        for (i in 1:332) {
+                if(nrow(ds[ds$ID == i,] >= threshold)
+                v <- c(v,nrow(ds[ds$ID == i,])
+                       else
 }
 
-corr <- function(directory, threshold = 0) {
-        ## 'directory' is a character vector of length 1 indicating
-        ## the location of the CSV files
-        
-        ## 'threshold' is a numeric vector of length 1 indicating the
-        ## number of completely observed observations (on all
-        ## variables) required to compute the correlation between
-        ## nitrate and sulfate; the default is 0
-        
-        ## Return a numeric vector of correlations
-        
-        cor_vec <-c()
-        
-        for(i in data$id)
