@@ -45,9 +45,9 @@
 #           
 #}
 
-## submission instructions
-## source("http://d396qusza40orc.cloudfront.net/rprog%2Fscripts%2Fsubmitscript1.R")
-## submit()
+### submission instructions
+#source("http://d396qusza40orc.cloudfront.net/rprog%2Fscripts%2Fsubmitscript1.R")
+#submit()
 ## PW: SDusP7mT48
 
 complete <- function(directory, id = 1:332) {
